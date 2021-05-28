@@ -8,14 +8,14 @@ import frappe
 import six
 import os
 from datetime import datetime
-from frappe.model.document import Document
+from frappe.website.website_generator import WebsiteGenerator
 from frappe.email import sendmail_to_system_managers
 from frappe.utils import add_days, add_years, nowdate, getdate, add_months, get_link_to_form
 from erpnext.non_profit.doctype.member.member import create_member
 from frappe import _
 import erpnext
 
-class Membership(Document):
+class Membership(WebsiteGenerator):
 	def validate(self):
 		if not self.member or not frappe.db.exists("Member", self.member):
 			# for web forms

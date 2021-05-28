@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "autoname": "NPO-MSH-.YYYY.-.#####",
  "creation": "2017-09-11 11:39:18.492184",
  "doctype": "DocType",
@@ -24,7 +25,9 @@
   "invoice",
   "razorpay_details_section",
   "subscription_id",
-  "payment_id"
+  "payment_id",
+  "route",
+  "published"
  ],
  "fields": [
   {
@@ -140,11 +143,24 @@
    "label": "Company",
    "options": "Company",
    "reqd": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "published"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [],
- "modified": "2021-02-19 14:33:44.925122",
+ "modified": "2021-05-22 13:49:01.377722",
  "modified_by": "Administrator",
  "module": "Non Profit",
  "name": "Membership",
@@ -176,6 +192,7 @@
   }
  ],
  "restrict_to_domain": "Non Profit",
+ "route": "membership",
  "search_fields": "member, member_name",
  "sort_field": "modified",
  "sort_order": "DESC",
